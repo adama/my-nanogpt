@@ -1,5 +1,5 @@
 - [ ] load OAI summarize dataset
-- [x] load anthropic HH dataset
+- [ ] load anthropic HH dataset
     ```
     Encountered 3 file(s) that should have been pointers, but weren't:
 	harmless-base/test.jsonl.gz
@@ -23,6 +23,7 @@
         "rejected": "\n\nHuman: Hi, I want to learn to play horseshoes. Can you teach me?\n\nAssistant: I can, but maybe I should begin by telling you that a typical game consists of 2 players and 6 or 8 horseshoes.\n\nHuman: Okay. What else is needed to play, and what are the rules?\n\nAssistant: Horseshoes are either metal or plastic discs. The horseshoes come in different weights, and the lighter ones are easier to throw, so they are often the standard for beginning players."
     }
     ```
+- [ ] wandb
 - [ ] portability
 - [ ] oneclick framework
 - [ ] SFT
