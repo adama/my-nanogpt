@@ -216,6 +216,7 @@ def estimate_loss():
     for split in ['train', 'val']:
         losses = torch.zeros(eval_iters)
         for k in range(eval_iters):
+            print("eval")
             X, Y = get_batch(split)
             with ctx:
                 logits, loss = model(X, Y)
