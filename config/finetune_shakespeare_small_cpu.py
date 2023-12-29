@@ -1,6 +1,6 @@
 import time
 
-out_dir = 'out-shakespeare-small'
+out_dir = 'out-shakespeare-small-cpu'
 eval_interval = 5
 eval_iters = 40
 wandb_log = False # feel free to turn on
@@ -26,4 +26,9 @@ decay_lr = False
 
 # cpu-specific stuff
 device = "cpu"
-compile = False # torch.compile appears to use cuda
+
+# torch.compile uses CUDA when it's available
+# but set `CUDA_VISIBLE_DEVICES=` and it will use the CPU
+# in the case of CPU only, it doesn't look like disabling the compiler
+# doesn't help very much, so up to you if you want to disable
+compile = False
