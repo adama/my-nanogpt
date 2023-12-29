@@ -1,7 +1,18 @@
 import time
 
 out_dir = 'out-shakespeare-small-cpu'
-eval_interval = 5
+eval_interval = 20
+# seems like saving a checkpoint more than 10x iter time on CPU with compilation on
+# TODO maybe it's because it does the eval/doesn't reset the timers when checkpointing
+# saving checkpoint to out-shakespeare-small-cpu
+# iter 5: loss 3.6509, time 808662.34ms, mfu 0.01%
+# iter 6: loss 3.5466, time 58659.21ms, mfu 0.03%
+# iter 7: loss 3.5728, time 58616.83ms, mfu 0.04%
+# even worse uncompiled
+# saving checkpoint to out-shakespeare-small-cpu
+# iter 20: loss 3.5700, time 901903.61ms, mfu 0.14%
+# iter 21: loss 3.3917, time 58142.60ms, mfu 0.14%
+# iter 22: loss 3.3074, time 58025.57ms, mfu 0.14%
 eval_iters = 40
 wandb_log = False # feel free to turn on
 wandb_project = 'shakespeare-small'
