@@ -19,7 +19,7 @@ wandb_project = 'shakespeare-small'
 wandb_run_name = 'ft-' + str(time.time())
 
 dataset = 'shakespeare'
-init_from = 'gpt2' # this is the largest GPT-2 model
+init_from = 'gpt2' # this is the smallest GPT-2 model
 
 # only save checkpoints if the validation loss improves
 always_save_checkpoint = False
@@ -40,6 +40,6 @@ device = "cpu"
 
 # torch.compile uses CUDA when it's available
 # but set `CUDA_VISIBLE_DEVICES=` and it will use the CPU
-# in the case of CPU only, it doesn't look like disabling the compiler
+# in the case of CPU only, it looks like disabling the compiler
 # doesn't help very much, so up to you if you want to disable
 compile = False

@@ -1,14 +1,14 @@
 import time
 
-out_dir = 'out-shakespeare-small'
-eval_interval = 5
+out_dir = 'out-shakespeare-small-cpu'
+eval_interval = 20
 eval_iters = 40
 wandb_log = False # feel free to turn on
-wandb_project = 'shakespeare-small'
+wandb_project = 'oaisum-cpu'
 wandb_run_name = 'ft-' + str(time.time())
 
-dataset = 'shakespeare'
-init_from = 'gpt2' # this is the smallest GPT-2 model
+dataset = 'oai_summarization'
+init_from = 'gpt2'
 
 # only save checkpoints if the validation loss improves
 always_save_checkpoint = False
@@ -23,3 +23,12 @@ max_iters = 100
 # finetune at constant LR
 learning_rate = 3e-5
 decay_lr = False
+
+# cpu-specific stuff
+device = "cpu"
+
+# torch.compile uses CUDA when it's available
+# but set `CUDA_VISIBLE_DEVICES=` and it will use the CPU
+# in the case of CPU only, it looks like disabling the compiler
+# doesn't help very much, so up to you if you want to disable
+compile = True
